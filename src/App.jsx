@@ -120,6 +120,7 @@ function App() {
         toastClassName="!bg-white dark:!bg-surface-800 !shadow-soft"
         progressClassName="!bg-primary"
       />
+      </div>
     </SidebarProvider>
   ); 
 }
