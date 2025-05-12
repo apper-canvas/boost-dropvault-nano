@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation, Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import { SidebarProvider } from './contexts/SidebarContext';
+import Sidebar from './components/layout/Sidebar';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/layout/Header';
 
@@ -32,10 +34,14 @@ function App() {
   }, [darkMode]);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+    <SidebarProvider>
+      <div className="min-h-screen flex flex-col">
+        <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+        
+        <div className="flex-grow flex">
+          <Sidebar />
       
-      <main className="flex-grow container mx-auto px-4 py-6">
+          <main className="flex-grow w-full container mx-auto px-4 py-6">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
@@ -46,7 +52,8 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
-      </main>
+          </main>
+        </div>
       
       <footer className="bg-white dark:bg-surface-800 border-t border-surface-200 dark:border-surface-700 py-8">
         <div className="container mx-auto px-4">
@@ -113,7 +120,8 @@ function App() {
         toastClassName="!bg-white dark:!bg-surface-800 !shadow-soft"
         progressClassName="!bg-primary"
       />
-    </div>
+    </SidebarProvider>
+  ); 
   );
 }
 

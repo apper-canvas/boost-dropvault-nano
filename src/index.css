@@ -66,6 +66,14 @@
   .glass {
     @apply bg-white/70 dark:bg-surface-800/70 backdrop-blur-md border border-white/20 dark:border-surface-700/20;
   }
+
+  .sidebar-backdrop {
+    @apply fixed inset-0 bg-black bg-opacity-50 z-20 transition-opacity;
+  }
+
+  .sidebar-slide {
+    @apply transform transition-transform duration-300;
+  }
   
   .neumorphic-light {
     @apply shadow-neu-light bg-surface-100 dark:bg-transparent dark:shadow-neu-dark;
