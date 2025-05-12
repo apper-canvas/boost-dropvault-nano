@@ -50,28 +50,36 @@ function App() {
       
       <footer className="bg-white dark:bg-surface-800 border-t border-surface-200 dark:border-surface-700 py-8">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-left">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="flex flex-col">
               <p className="text-surface-500 dark:text-surface-400 text-sm">
                 &copy; {new Date().getFullYear()} DropVault. All rights reserved.
               </p>
             </div>
             
-            <div className="flex flex-wrap gap-4 justify-center text-sm">
-              <Link to="/terms" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
-                Terms of Service
-              </Link>
-              <Link to="/privacy" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/contact" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
-                Contact Us
-              </Link>
-              <Link to="/sample" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
-                Sample Page
-              </Link>
+            <div className="flex flex-col">
+              <h3 className="font-semibold text-surface-700 dark:text-surface-300 mb-3">Quick Links</h3>
+              <div className="flex flex-col space-y-2 text-sm">
+                <Link to="/" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
+                  Home
+                </Link>
+                <Link to="/terms" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
+                  Terms of Service
+                </Link>
+                <Link to="/privacy" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
+                  Privacy Policy
+                </Link>
+                <Link to="/contact" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
+                  Contact Us
+                </Link>
+                <Link to="/sample" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
+                  Sample Page
+                </Link>
+              </div>
             </div>
             
+            <div className="flex flex-col items-center md:items-end">
+              <h3 className="font-semibold text-surface-700 dark:text-surface-300 mb-3">Follow Us</h3>
             <div className="flex gap-4">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
                 <Facebook size={20} />
@@ -85,6 +93,7 @@ function App() {
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
                 <GitHub size={20} />
               </a>
+            </div>
             </div>
           </div>
         </div>
