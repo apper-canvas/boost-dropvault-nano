@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/layout/Header';
@@ -7,6 +7,7 @@ import Header from './components/layout/Header';
 // Page components
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
+import { Facebook, Twitter, Instagram, Linkedin, GitHub } from 'lucide-react';
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -39,9 +40,42 @@ function App() {
         </AnimatePresence>
       </main>
       
-      <footer className="bg-white dark:bg-surface-800 border-t border-surface-200 dark:border-surface-700 py-6">
-        <div className="container mx-auto px-4 text-center text-surface-500 dark:text-surface-400 text-sm">
-          &copy; {new Date().getFullYear()} DropVault. All rights reserved.
+      <footer className="bg-white dark:bg-surface-800 border-t border-surface-200 dark:border-surface-700 py-8">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-left">
+              <p className="text-surface-500 dark:text-surface-400 text-sm">
+                &copy; {new Date().getFullYear()} DropVault. All rights reserved.
+              </p>
+            </div>
+            
+            <div className="flex flex-wrap gap-4 justify-center text-sm">
+              <Link to="/terms" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
+                Terms of Service
+              </Link>
+              <Link to="/privacy" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/contact" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
+                Contact Us
+              </Link>
+            </div>
+            
+            <div className="flex gap-4">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
+                <Facebook size={20} />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
+                <Twitter size={20} />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
+                <GitHub size={20} />
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
       
