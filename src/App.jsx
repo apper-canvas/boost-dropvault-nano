@@ -7,6 +7,7 @@ import Header from './components/layout/Header';
 // Page components
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import { Facebook, Twitter, Instagram, Linkedin, GitHub } from 'lucide-react';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
