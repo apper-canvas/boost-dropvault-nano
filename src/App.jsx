@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Sample from './pages/Sample';
+import Contact from './pages/Contact';
 import { Facebook, Twitter, Instagram, Linkedin, GitHub } from 'lucide-react';
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/sample" element={<Sample />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
