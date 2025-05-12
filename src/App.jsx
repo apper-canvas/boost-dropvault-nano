@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Sample from './pages/Sample';
+import TermsAndConditions from './pages/TermsAndConditions';
 import Contact from './pages/Contact';
 import { Facebook, Twitter, Instagram, Linkedin, GitHub } from 'lucide-react';
 
@@ -39,6 +40,7 @@ function App() {
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsAndConditions />} />
             <Route path="/sample" element={<Sample />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
