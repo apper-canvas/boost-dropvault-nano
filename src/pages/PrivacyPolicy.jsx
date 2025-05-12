@@ -1,107 +1,131 @@
 import { motion } from 'framer-motion';
 
-const pageVariants = {
-  initial: { opacity: 0, y: 20 },
-  in: { opacity: 1, y: 0 },
-  out: { opacity: 0, y: -20 }
-};
-
-const pageTransition = {
-  type: 'tween',
-  ease: 'anticipate',
-  duration: 0.4
-};
-
-function PrivacyPolicy() {
+const PrivacyPolicy = () => {
   return (
     <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.3 }}
+      className="max-w-4xl mx-auto"
     >
-      <section className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Privacy Policy</h1>
+      <div className="card p-6 md:p-8">
+        <h1 className="text-2xl md:text-3xl font-bold mb-6 text-primary dark:text-primary-light">Privacy Policy</h1>
         
+        <p className="mb-6 text-surface-600 dark:text-surface-300">
+          Last updated: {new Date().toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+          })}
+        </p>
+
         <div className="space-y-8">
-          <div className="card p-6">
-            <h2 className="text-xl font-semibold mb-4">Introduction</h2>
-            <p className="text-surface-600 dark:text-surface-300 mb-3">
-              At DropVault, we are committed to protecting your privacy and personal data. This Privacy Policy 
-              explains how we collect, use, process, and store your information when you use our services.
+          <section>
+            <h2 className="text-xl font-semibold mb-3 text-surface-800 dark:text-surface-100">Introduction</h2>
+            <p className="mb-3 text-surface-600 dark:text-surface-300">
+              At DropVault, we respect your privacy and are committed to protecting your personal data. 
+              This Privacy Policy explains how we collect, use, disclose, and safeguard your information when 
+              you use our file management service.
             </p>
             <p className="text-surface-600 dark:text-surface-300">
-              This policy applies to all users of DropVault, including registered users and visitors to our website.
+              Please read this Privacy Policy carefully. If you do not agree with the terms of this Privacy Policy, 
+              please do not access the application.
             </p>
-          </div>
-          
-          <div className="card p-6">
-            <h2 className="text-xl font-semibold mb-4">Information We Collect</h2>
-            <h3 className="text-lg font-medium mb-2">Personal Information</h3>
-            <p className="text-surface-600 dark:text-surface-300 mb-3">
-              We collect personal information that you provide directly to us, such as:
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3 text-surface-800 dark:text-surface-100">Information We Collect</h2>
+            <p className="mb-3 text-surface-600 dark:text-surface-300">
+              We collect information that you provide directly to us when you:
             </p>
-            <ul className="list-disc list-inside text-surface-600 dark:text-surface-300 ml-4 mb-4">
-              <li>Name and contact information</li>
-              <li>Account credentials</li>
-              <li>Payment information</li>
-              <li>Profile information</li>
+            <ul className="list-disc pl-6 mb-3 text-surface-600 dark:text-surface-300 space-y-2">
+              <li>Create an account and profile</li>
+              <li>Upload, download, or share files</li>
+              <li>Communicate with us directly</li>
+              <li>Subscribe to our newsletters or updates</li>
+              <li>Respond to surveys or questionnaires</li>
             </ul>
-            
-            <h3 className="text-lg font-medium mb-2">Usage Data</h3>
-            <p className="text-surface-600 dark:text-surface-300 mb-3">
-              We automatically collect certain information when you use DropVault:
-            </p>
-            <ul className="list-disc list-inside text-surface-600 dark:text-surface-300 ml-4">
-              <li>IP address and device information</li>
-              <li>Browser type and settings</li>
-              <li>Usage patterns and preferences</li>
-              <li>Files uploaded and storage usage</li>
-            </ul>
-          </div>
-          
-          <div className="card p-6">
-            <h2 className="text-xl font-semibold mb-4">How We Use Your Information</h2>
-            <p className="text-surface-600 dark:text-surface-300 mb-3">
-              We use the collected information for various purposes:
-            </p>
-            <ul className="list-disc list-inside text-surface-600 dark:text-surface-300 ml-4">
-              <li>To provide and maintain our service</li>
-              <li>To notify you about changes to our service</li>
-              <li>To provide customer support</li>
-              <li>To gather analysis or valuable information to improve our service</li>
-              <li>To detect, prevent and address technical issues</li>
-            </ul>
-          </div>
-          
-          <div className="card p-6">
-            <h2 className="text-xl font-semibold mb-4">Data Security</h2>
             <p className="text-surface-600 dark:text-surface-300">
-              The security of your data is important to us. We implement appropriate security measures to protect 
-              your personal information from unauthorized access, alteration, disclosure, or destruction. All data 
-              is encrypted during transmission and at rest. We regularly review our security practices to ensure 
-              the highest level of protection.
+              This information may include your name, email address, profile information, and the content of files you upload.
             </p>
-          </div>
-          
-          <div className="card p-6">
-            <h2 className="text-xl font-semibold mb-4">Your Rights</h2>
-            <p className="text-surface-600 dark:text-surface-300 mb-3">
-              You have the following data protection rights:
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3 text-surface-800 dark:text-surface-100">How We Use Your Information</h2>
+            <p className="mb-3 text-surface-600 dark:text-surface-300">
+              We use the information we collect for various purposes, including to:
             </p>
-            <ul className="list-disc list-inside text-surface-600 dark:text-surface-300 ml-4">
-              <li>The right to access, update or delete your information</li>
-              <li>The right to rectification</li>
-              <li>The right to object to processing</li>
+            <ul className="list-disc pl-6 mb-3 text-surface-600 dark:text-surface-300 space-y-2">
+              <li>Provide, maintain, and improve our services</li>
+              <li>Process and complete transactions</li>
+              <li>Send administrative information, such as updates, security alerts, and support messages</li>
+              <li>Respond to your comments, questions, and requests</li>
+              <li>Communicate with you about products, services, offers, and events</li>
+              <li>Monitor and analyze usage patterns and trends</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3 text-surface-800 dark:text-surface-100">Cookies and Tracking Technologies</h2>
+            <p className="mb-3 text-surface-600 dark:text-surface-300">
+              We use cookies and similar tracking technologies to track activity on our application and 
+              hold certain information. Cookies are files with a small amount of data that may include 
+              an anonymous unique identifier.
+            </p>
+            <p className="text-surface-600 dark:text-surface-300">
+              You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. 
+              However, if you do not accept cookies, you may not be able to use some portions of our service.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3 text-surface-800 dark:text-surface-100">Data Security</h2>
+            <p className="mb-3 text-surface-600 dark:text-surface-300">
+              We have implemented appropriate technical and organizational security measures designed to protect 
+              the security of any personal information we process. However, please also remember that we cannot 
+              guarantee that the internet itself is 100% secure.
+            </p>
+            <p className="text-surface-600 dark:text-surface-300">
+              Although we will do our best to protect your personal information, transmission of personal 
+              information to and from our application is at your own risk.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3 text-surface-800 dark:text-surface-100">Your Data Protection Rights</h2>
+            <p className="mb-3 text-surface-600 dark:text-surface-300">
+              Depending on your location, you may have the following rights regarding your data:
+            </p>
+            <ul className="list-disc pl-6 mb-3 text-surface-600 dark:text-surface-300 space-y-2">
+              <li>The right to access information we have about you</li>
+              <li>The right to request correction of any inaccurate information</li>
+              <li>The right to request deletion of your personal information</li>
+              <li>The right to object to processing of your personal information</li>
               <li>The right to data portability</li>
-              <li>The right to withdraw consent</li>
+              <li>The right to withdraw consent at any time</li>
             </ul>
-          </div>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3 text-surface-800 dark:text-surface-100">Changes to This Privacy Policy</h2>
+            <p className="text-surface-600 dark:text-surface-300">
+              We may update our Privacy Policy from time to time. We will notify you of any changes by posting 
+              the new Privacy Policy on this page and updating the "Last updated" date. You are advised to 
+              review this Privacy Policy periodically for any changes.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3 text-surface-800 dark:text-surface-100">Contact Us</h2>
+            <p className="text-surface-600 dark:text-surface-300">
+              If you have any questions about this Privacy Policy, please contact us at privacy@dropvault.com.
+            </p>
+          </section>
         </div>
-      </section>
+      </div>
     </motion.div>
   );
-}
+};
 
 export default PrivacyPolicy;
