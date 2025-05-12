@@ -15,6 +15,12 @@ const Home = () => {
   const FileIcon = getIcon('FileText');
   const StorageIcon = getIcon('Database');
   const SecurityIcon = getIcon('Shield');
+  const CloudIcon = getIcon('Cloud');
+  const ShareIcon = getIcon('Share2');
+  const DeviceIcon = getIcon('Smartphone');
+  const SyncIcon = getIcon('RefreshCw');
+  const SearchIcon = getIcon('Search');
+  const LockIcon = getIcon('Lock');
   const SpeedIcon = getIcon('Zap');
   
   const handleFileUpload = (files) => {
@@ -58,16 +64,46 @@ const Home = () => {
     {
       icon: SecurityIcon,
       title: "Secure Storage",
-      description: "Your files are encrypted and stored securely with industry-standard protocols.",
+      description: "End-to-end encryption ensures your files are protected with industry-standard protocols at rest and in transit.",
     },
     {
       icon: SpeedIcon,
       title: "Fast Transfers",
-      description: "Optimized upload and download speeds to save you time.",
+      description: "Optimized upload and download speeds with intelligent bandwidth allocation to save you time on large transfers.",
     },
     {
       icon: FileIcon,
       title: "Any File Type",
+      description: "Support for all file types and formats up to 50GB per file, with no limitations on what you can store.",
+    },
+    {
+      icon: CloudIcon,
+      title: "Cloud Backup",
+      description: "Automatic backups ensure your files are never lost, with version history and disaster recovery options.",
+    },
+    {
+      icon: ShareIcon,
+      title: "Easy Sharing",
+      description: "Share files and folders with specific people through secure links, with optional password protection and expiry dates.",
+    },
+    {
+      icon: DeviceIcon,
+      title: "Cross-Platform",
+      description: "Access your files from any device with our web interface, desktop applications, and mobile apps.",
+    },
+    {
+      icon: SyncIcon,
+      title: "Auto-Sync",
+      description: "Changes made to your files automatically sync across all your devices in real-time.",
+    },
+    {
+      icon: SearchIcon,
+      title: "Smart Search",
+      description: "Powerful search functionality helps you find files quickly with filters for type, size, and date.",
+    },
+    {
+      icon: LockIcon,
+      title: "Access Control",
       description: "Support for all file types and formats, no limitations.",
     },
   ];
@@ -160,11 +196,12 @@ const Home = () => {
       
       <section className="py-8">
         <h2 className="text-2xl font-bold mb-8 text-center">Key Features</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {featureItems.map((feature, index) => (
             <motion.div
               key={index}
-              className="card p-6 hover:shadow-soft transition-shadow"
+              className="card p-6 hover:shadow-soft transition-shadow flex flex-col 
+              items-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * index }}
