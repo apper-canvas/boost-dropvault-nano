@@ -13,7 +13,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import Sample from './pages/Sample';
 import TermsAndConditions from './pages/TermsAndConditions';
 import Contact from './pages/Contact';
-import { Facebook, Twitter, Instagram, Linkedin, GitHub } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-react';
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -98,7 +98,7 @@ function App() {
                 <Instagram size={20} />
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-surface-500 dark:text-surface-400 hover:text-primary dark:hover:text-primary-light transition-colors">
-                <GitHub size={20} />
+                <Github size={20} />
               </a>
             </div>
             </div>
